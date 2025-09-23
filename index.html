@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamBakesCakes - Premium Vanilla Cake Mix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #2c2c2c 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-name {
+            font-size: 2.5rem;
+            color: #d4af37;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-content .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e8e8e8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .product-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .product-box {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-box:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .feature {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature h3 {
+            color: #d4af37;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .feature p {
+            color: #cccccc;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .signup-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.9s both;
+            backdrop-filter: blur(10px);
+        }
+
+        .signup-section h2 {
+            color: #d4af37;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .signup-section .subtitle-text {
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-input {
+            padding: 1.2rem 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            background: rgba(0,0,0,0.3);
+            color: #f5f5f5;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .email-input:focus {
+            border-color: #d4af37;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .email-input::placeholder {
+            color: #999;
+        }
+
+        .signup-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #1a1a1a;
+            border: none;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: inherit;
+        }
+
+        .signup-btn:hover {
+            background: linear-gradient(135deg, #e6c547 0%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .signup-btn:active {
+            transform: translateY(0);
+        }
+
+        .notification {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+            animation: slideDown 0.5s ease-out;
+            font-weight: 500;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .golden-particle {
+            position: absolute;
+            background: #d4af37;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .golden-particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .golden-particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .golden-particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        .golden-particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 40%;
+            right: 30%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .brand-name {
+                font-size: 2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-section {
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            .email-form {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-elements">
+        <div class="golden-particle"></div>
+        <div class="golden-particle"></div>
+        <div class="golden-particle"></div>
+        <div class="golden-particle"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="brand-name">SamBakesCakes</div>
+        </header>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>VANILLA<br>CAKE MIX</h1>
+                <div class="subtitle">Premium Cake Mix</div>
+                <div class="description">
+                    Elevate your baking with our luxury vanilla cake mix. Crafted for discerning bakers who demand exceptional quality and taste, this premium blend delivers the perfect foundation for creating extraordinary cakes that rival those from the finest bakeries.
+                </div>
+            </div>
+            <div class="product-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDQwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTAwIiByeD0iMTAiIGZpbGw9IiMyYzJjMmMiLz4KPHRleHQgeD0iMjAwIiB5PSI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q0YWYzNyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI0Ij5TYW1CYWtlc0Nha2VzPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjE2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q0YWYzNyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCI+VkFOSUxMQTwvdGV4dD4KPHRleHQgeD0iMjAwIiB5PSIyMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9ImJvbGQiPkNBS0UgTUlYPC90ZXh0Pgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIzMDAiIHI9IjgwIiBmaWxsPSIjZjVmNWY1IiBvcGFjaXR5PSIwLjkiLz4KPHR5cGU+Jmx0O3BhdGggZD0ibTE2MCAzMDBjMCAtMjIgMTggLTQwIDQwIC00MHM0MCAxOCA0MCA0MHMtMTggNDAgLTQwIDQwcy00MCAtMTggLTQwIC00MHoiIGZpbGw9IiNkNGFmMzciIG9wYWNpdHk9IjAuNyIvPgo8dGV4dCB4PSIyMDAiIHk9IjQyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q0YWYzNyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE4IiBsZXR0ZXItc3BhY2luZz0iMnB4Ij5QUkVNSVVNIENBS0UgTUlYPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjQ2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q0YWYzNyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE0Ij5ORVQgV1QgMjAgT1ogKDEgTEIgNCBPWikgNTY3ZzwvdGV4dD4KPC9zdmc+" alt="SamBakesCakes Vanilla Cake Mix Box" class="product-box">
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">👨‍🍳</span>
+                <h3>Artisan Quality</h3>
+                <p>Meticulously crafted blend of premium ingredients for professional-grade results in your home kitchen.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌟</span>
+                <h3>Superior Taste</h3>
+                <p>Rich, authentic vanilla flavor that surpasses ordinary box mixes, delivering bakery-quality taste every time.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✨</span>
+                <h3>Perfect Texture</h3>
+                <p>Achieve consistently moist, tender crumb with the ideal rise - the foundation for your most elegant creations.</p>
+            </div>
+        </div>
+
+        <div class="signup-section">
+            <h2>Be the First to Experience Luxury</h2>
+            <p class="subtitle-text">Join our exclusive list to receive early access when our premium vanilla cake mix launches. Limited initial quantities available.</p>
+            
+            <form id="signupForm" class="email-form">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    placeholder="Enter your email address"
+                    required
+                    id="emailInput"
+                >
+                <button type="submit" class="signup-btn">Notify Me at Launch</button>
+            </form>
+            
+            <div class="notification" id="notification">
+                Thank you! You'll be among the first to know when our premium vanilla cake mix is available.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('emailInput');
+            const notification = document.getElementById('notification');
+            const email = emailInput.value.trim();
+            
+            if (email) {
+                // Here you would send the email to your backend service
+                console.log('Email submitted for launch notification:', email);
+                
+                // Show success notification
+                notification.style.display = 'block';
+                
+                // Clear the input
+                emailInput.value = '';
+                
+                // Hide notification after 6 seconds
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 6000);
+            }
+        });
+
+        // Add subtle hover effects
+        document.querySelector('.signup-section').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 10px 30px rgba(212, 175, 55, 0.2)';
+        });
+
+        document.querySelector('.signup-section').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>
